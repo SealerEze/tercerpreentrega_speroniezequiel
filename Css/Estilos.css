@@ -2,14 +2,14 @@ body {
     margin: 0;
     box-sizing: border-box;
     font-family: Optima, sans-serif;
-    --border: 1px solid hsla(240, 25%, 50%, 0.3);
-    --border-table: 1px solid hsla(240, 25%, 50%, 01);
-    background: hsl(240, 20%, 20%)
+    --border: 1px solid black;
+    --border-table: 1px solid black;
+    background: aliceblue;
 }
 
 h1 {
     text-align: center;
-    color: white;
+    color: black;
 }
 
 /* DESDE AQUI EMPIEZA LA SECCIÓN DEL CARRITO */
@@ -22,7 +22,7 @@ h1 {
     width: 80%;
     table-layout: fixed;
     border-collapse: collapse;
-    color: white;
+    color:black;
     margin-bottom: 2rem;
     empty-cells: hide;
     border-radius: 10px;
@@ -51,7 +51,7 @@ h1 {
 
 th {
     font-size: 1.1rem;
-    background: rgba(83, 226, 236, 0.7);
+    background: lightseagreen;
 }
 
 th,
@@ -63,7 +63,7 @@ tr {
 }
 
 td {
-    background: hsla(210, 40%, 90%, .9);
+    background: aliceblue;
     color: black;
 }
 
@@ -75,8 +75,8 @@ td {
 .button {
     margin: 0 .4rem;
     border: solid black;
-    background: rgba(208, 235, 59, 0.7);
-    color: rgb(0, 0, 0);
+    background: greenyellow;
+    color: black;
     cursor: pointer;
 }
 
@@ -95,7 +95,7 @@ td {
     height: 300px;
     width: 230px;
     border-radius: 0.35rem;
-    background: #f4f4f4;
+    background: aliceblue;
     display: flex;
     flex-direction: column;
     position: relative;
@@ -108,7 +108,7 @@ td {
 .cartola:hover {
     transform: scale(1.05);
     transition: transform 0.3s;
-    box-shadow: 0 0 2rem hsla(240, 100%, 90%, 0.5);
+    box-shadow: 0 0 2rem crimson;
 }
 
 /* Imagen */
@@ -169,7 +169,7 @@ img {
 }
 
 .boton {
-    background: hsla(210, 40%, 70%, .7);
+    background: aliceblue;
     cursor: pointer;
     border: solid black;
     font-size: 1rem;
@@ -181,8 +181,8 @@ img {
 }
 
 .boton:hover {
-    color: rgba(255, 255, 255, .8);
-    background: hsla(210, 40%, 50%, 1);
+    color: crimson;
+    background: aliceblue;
     box-shadow: 1px 1px 3px hsl(0, 100%, 0%, 0.25);
 }
 

@@ -5,7 +5,7 @@ const productos = {
     precio: "500",
     descripcion:
       "Papas fritas Avengers para reunirse con amigos.",
-    srcImg: "https://i.blogs.es/f9cf25/degustacion-patatas/450_1000.jpg",
+    srcImg: "https://media.istockphoto.com/id/1199460959/es/foto/macaroni-cremoso-y-papas-fritas-con-tocino.jpg?s=612x612&w=0&k=20&c=g6XQAeKe0tFMtoO-HnPRcIzRmez7G8KSw5RPkykEZ4Q=",
   },
   producto2: {
     nombre: "Hamburguesa Hawkeye",
@@ -13,7 +13,7 @@ const productos = {
     descripcion:
       "Hamburguesa con un sabor que da en el blanco.",
     srcImg:
-      "https://cocina-casera.com/wp-content/uploads/2016/11/hamburguesa-queso-receta.jpg",
+      "https://img.freepik.com/foto-gratis/vista-frontal-hamburguesa-stand_141793-15542.jpg?w=996&t=st=1672103788~exp=1672104388~hmac=b0120b5bf0216e94be8b2f6baf7e4039949a81c1cc4c9b863f1e224ac4514582",
   },
   producto3: {
     nombre: "Pizza CapiAmerica",
@@ -21,7 +21,7 @@ const productos = {
     descripcion:
       "Pizza con un piso duro como el escudo del Cap.",
     srcImg:
-      "https://elgourmet.s3.amazonaws.com/recetas/share/pizza_Mh3H4eanyBKEsStv1YclPWTf9OUqIi.png",
+      "https://www.periodistadigital.com/wp-content/uploads/2020/02/pizza-americana.jpg",
   },
   producto4: {
     nombre: "Pancho Hulk",
@@ -29,7 +29,7 @@ const productos = {
     descripcion:
       "Con este pancho vas a quedar lleno como Bruce Banner.",
     srcImg:
-      "https://i2.wp.com/golososdelmundo.com/wp-content/uploads/2018/08/completo-italiano3.jpg?fit=1024%2C683",
+      "https://img-global.cpcdn.com/recipes/689c483388f76a9e/400x400cq70/photo.jpg",
   },
 };
 
