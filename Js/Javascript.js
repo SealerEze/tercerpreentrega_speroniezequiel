@@ -83,16 +83,16 @@ e.stopPropagation();
 });
 
 const setCarrito = (e) => {
-const pivoteCarrito = {
+const pCarrito = {
     nombre: e.querySelector(".div-info .nombre-prod").textContent,
     precio: e.querySelector(".div-precio-boton .precio").textContent,
     cantidad: 1,
 };
 
-if (carrito.hasOwnProperty(pivoteCarrito.nombre)) {
-    carrito[pivoteCarrito.nombre].cantidad += 1;
+if (carrito.hasOwnProperty(pCarrito.nombre)) {
+    carrito[pCarrito.nombre].cantidad += 1;
 } else {
-    carrito[pivoteCarrito.nombre] = { ...pivoteCarrito };
+    carrito[pCarrito.nombre] = { ...pCarrito };
 }
 pintarTabla(carrito);
 };
