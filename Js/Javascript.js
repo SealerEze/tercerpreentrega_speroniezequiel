@@ -1,33 +1,33 @@
 // Array de productos
 const productos = {
   producto1: {
-    nombre: "Papas fritas",
-    precio: "3.50",
+    nombre: "Papas fritas Avengers",
+    precio: "500",
     descripcion:
-      "Papas frescas preparadas en el momento, caseras, seleccionadas exclusivamente para tener una buena calidad y con un sabor inigualable.",
+      "Papas fritas Avengers para reunirse con amigos.",
     srcImg: "https://i.blogs.es/f9cf25/degustacion-patatas/450_1000.jpg",
   },
   producto2: {
-    nombre: "Hamburguesa",
-    precio: "10.00",
+    nombre: "Hamburguesa Hawkeye",
+    precio: "1200",
     descripcion:
-      "La mejor Hamburguesa del mercado, con productos finamente seleccionados, una presentación única y el mejor sabor.",
+      "Hamburguesa con un sabor que da en el blanco.",
     srcImg:
       "https://cocina-casera.com/wp-content/uploads/2016/11/hamburguesa-queso-receta.jpg",
   },
   producto3: {
-    nombre: "Pizza",
-    precio: "15.50",
+    nombre: "Pizza CapiAmerica",
+    precio: "1500",
     descripcion:
-      "Masa preparada en el local, fermentada el tiempo suficiente para que de una mordida puedas sentir una sensación única de sabor y textura.",
+      "Pizza con un piso duro como el escudo del Cap.",
     srcImg:
       "https://elgourmet.s3.amazonaws.com/recetas/share/pizza_Mh3H4eanyBKEsStv1YclPWTf9OUqIi.png",
   },
   producto4: {
-    nombre: "Completo",
-    precio: "8.50",
+    nombre: "Pancho Hulk",
+    precio: "400",
     descripcion:
-      "Estos son los mejores completos de la ciudad, hechos con el mejor pan y ingredientes finamente seleccionados.",
+      "Con este pancho vas a quedar lleno como Bruce Banner.",
     srcImg:
       "https://i2.wp.com/golososdelmundo.com/wp-content/uploads/2018/08/completo-italiano3.jpg?fit=1024%2C683",
   },
@@ -116,7 +116,7 @@ const pintarFooter = () => {
   tfootCarrito.innerHTML = "";
   if (Object.keys(carrito).length === 0) {
     tfootCarrito.innerHTML =
-      "<tr><td colspan = 4>¡No hay ningun elemento en el carrito!</td></tr>";
+      "<tr><td colspan = 4>¡No hay nada en tu carrito!</td></tr>";
   } else {
     const total = Object.values(carrito).reduce(
       (acc, { cantidad, precio }) => acc + cantidad * precio,
@@ -135,7 +135,7 @@ const pintarFooter = () => {
     });
 
 
-    
+
 
     //Botones aumentar y disminuir cantidades
   }
