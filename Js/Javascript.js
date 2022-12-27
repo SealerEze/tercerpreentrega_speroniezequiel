@@ -1,35 +1,35 @@
 // Array de productos
 const productos = {
   producto1: {
-    nombre: "Papas fritas Avengers",
+    nombre: "Dados Para Rol",
     precio: "500",
     descripcion:
-      "Papas fritas Avengers para reunirse con amigos.",
-    srcImg: "https://media.istockphoto.com/id/1199460959/es/foto/macaroni-cremoso-y-papas-fritas-con-tocino.jpg?s=612x612&w=0&k=20&c=g6XQAeKe0tFMtoO-HnPRcIzRmez7G8KSw5RPkykEZ4Q=",
+      "Los dados para usar en tus partidas.",
+    srcImg: "https://i0.wp.com/imgs.hipertextual.com/wp-content/uploads/2015/07/dados-juegos-de-rol.jpg?fit=1000%2C598&quality=50&strip=all&ssl=1",
   },
   producto2: {
-    nombre: "Hamburguesa Hawkeye",
+    nombre: "Pantalla de DM",
     precio: "1200",
     descripcion:
-      "Hamburguesa con un sabor que da en el blanco.",
+      "Pantalla para que nadie vea que hace tu DM.",
     srcImg:
-      "https://img.freepik.com/foto-gratis/vista-frontal-hamburguesa-stand_141793-15542.jpg?w=996&t=st=1672103788~exp=1672104388~hmac=b0120b5bf0216e94be8b2f6baf7e4039949a81c1cc4c9b863f1e224ac4514582",
+      "https://gcdn.lanetaneta.com/wp-content/uploads/2022/04/DD-Como-construir-una-pantalla-DM-personalizada.jpg",
   },
   producto3: {
-    nombre: "Pizza CapiAmerica",
+    nombre: "Manual del jugador",
     precio: "1500",
     descripcion:
-      "Pizza con un piso duro como el escudo del Cap.",
+      "Manual del Jugador para todos aquellos que quieran empezar en el rol.",
     srcImg:
-      "https://www.periodistadigital.com/wp-content/uploads/2020/02/pizza-americana.jpg",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ6nU1Whcb1ZUoGE5gC3Rtk3RQG2alwBZr3v66kRtX7OxL-b-xTDJHzUunlfJVpfU_wAZg&usqp=CAU",
   },
   producto4: {
     nombre: "Pancho Hulk",
     precio: "400",
     descripcion:
-      "Con este pancho vas a quedar lleno como Bruce Banner.",
+      "Guia del DM, si quieres empezar a dirigir partidas necesitas una!",
     srcImg:
-      "https://img-global.cpcdn.com/recipes/689c483388f76a9e/400x400cq70/photo.jpg",
+      "https://zeth.com.ar/wp-content/uploads/Edge_entertainment_Guia_del_dungeon_master_original_01.jpg",
   },
 };
 
@@ -68,7 +68,7 @@ contenedorProd.appendChild(fragment);
 // TODO LO RELACIONADO AL CARRITO DE COMPRA
 let carrito = {};
 const templateTabla = document.getElementById(
-  "agregar-producto-al-carro"
+"agregar-producto-al-carro"
 ).content;
 const tbodyCarrito = document.getElementById("carrito-body");
 const fragmentTabla = document.createDocumentFragment();
@@ -76,97 +76,102 @@ const templateFoot = document.getElementById("tfooter").content;
 const tfootCarrito = document.getElementById("footer");
 
 contenedorProd.addEventListener("click", (e) => {
-  if (e.target.textContent === "Agregar") {
+if (e.target.textContent === "Agregar") {
     setCarrito(e.target.parentElement.parentElement);
-  }
-  e.stopPropagation();
+}
+e.stopPropagation();
 });
+
 const setCarrito = (e) => {
-  const pivoteCarrito = {
+const pivoteCarrito = {
     nombre: e.querySelector(".div-info .nombre-prod").textContent,
     precio: e.querySelector(".div-precio-boton .precio").textContent,
     cantidad: 1,
-  };
-  if (carrito.hasOwnProperty(pivoteCarrito.nombre)) {
+};
+
+if (carrito.hasOwnProperty(pivoteCarrito.nombre)) {
     carrito[pivoteCarrito.nombre].cantidad += 1;
-  } else {
+} else {
     carrito[pivoteCarrito.nombre] = { ...pivoteCarrito };
-  }
-  pintarTabla(carrito);
+}
+pintarTabla(carrito);
 };
 
 
 
 const pintarTabla = (objetoCarrito) => {
-  Object.values(objetoCarrito).forEach((objeto) => {
+Object.values(objetoCarrito).forEach((objeto) => {
     const cloneTabla = templateTabla.cloneNode(true);
     cloneTabla.getElementById("producto").textContent = objeto.nombre;
     cloneTabla.getElementById("cant").textContent = objeto.cantidad;
     cloneTabla.getElementById("precio-uni").textContent = objeto.precio;
     let precioTotal = parseFloat(objeto.precio) * objeto.cantidad;
     cloneTabla.getElementById("precio-total-prod").textContent =
-      precioTotal.toFixed(2);
+    precioTotal.toFixed(2);
     fragmentTabla.appendChild(cloneTabla);
-  });
-  tbodyCarrito.innerHTML = "";
-  tbodyCarrito.appendChild(fragmentTabla);
-  pintarFooter();
+});
+tbodyCarrito.innerHTML = "";
+tbodyCarrito.appendChild(fragmentTabla);
+pintarFooter();
 };
 const pintarFooter = () => {
-  tfootCarrito.innerHTML = "";
-  if (Object.keys(carrito).length === 0) {
+tfootCarrito.innerHTML = "";
+if (Object.keys(carrito).length === 0) {
     tfootCarrito.innerHTML =
-      "<tr><td colspan = 4>¡No hay nada en tu carrito!</td></tr>";
-  } else {
+    "<tr><td colspan = 4>¡No hay nada en tu carrito!</td></tr>";
+} else {
     const total = Object.values(carrito).reduce(
       (acc, { cantidad, precio }) => acc + cantidad * precio,
-      0
+    0
     );
     templateFoot.getElementById("total-a-pagar").textContent = total.toFixed(2);
     const cloneFoot = templateFoot.cloneNode(true);
     fragment.appendChild(cloneFoot);
     tfootCarrito.appendChild(fragment);
+    
+    
+    
     //Boton Vaciar carrito
     const botonVaciar = document.getElementById("vaciar-tabla");
     botonVaciar.addEventListener("click", () => {
-      carrito = {};
-      pintarTabla(carrito);
-      pintarFooter();
+    carrito = {};
+    pintarTabla(carrito);
+    pintarFooter();
     });
 
 
 
 
     //Botones aumentar y disminuir cantidades
-  }
+}
 };
 tbodyCarrito.addEventListener("click", (e) => {
-  if (e.target.classList.contains("button")) {
+if (e.target.classList.contains("button")) {
     aumentarDisminuir(e.target);
-  }
+}
 });
 const aumentarDisminuir = (boton) => {
-  if (boton.textContent === "+") {
+if (boton.textContent === "+") {
     const indicador =
-      boton.parentElement.parentElement.firstElementChild.textContent;
+    boton.parentElement.parentElement.firstElementChild.textContent;
     Object.values(carrito).forEach((elemento) => {
-      if (elemento.nombre === indicador) {
+    if (elemento.nombre === indicador) {
         carrito[elemento.nombre].cantidad++;
-      }
+    }
     });
-  }
-  if (boton.textContent === "-") {
+}
+if (boton.textContent === "-") {
     const indicador =
-      boton.parentElement.parentElement.firstElementChild.textContent;
+    boton.parentElement.parentElement.firstElementChild.textContent;
     Object.values(carrito).forEach((elemento) => {
-      if (elemento.nombre === indicador) {
+    if (elemento.nombre === indicador) {
         carrito[elemento.nombre].cantidad--;
         if (carrito[elemento.nombre].cantidad === 0) {
-          delete carrito[elemento.nombre];
+        delete carrito[elemento.nombre];
         }
-      }
+    }
     });
-  }
-  pintarTabla(carrito);
-  pintarFooter();
+}
+pintarTabla(carrito);
+pintarFooter();
 };
